@@ -12,7 +12,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Checkbox } from "@/components/ui/checkbox";
 import FieldEdit from "./FieldEdit";
 
-const FormUi = ({ jsonForm,onFieldUpdate,deleteField }) => {
+const FormUi = ({ jsonForm,selectedTheme,onFieldUpdate,deleteField }) => {
 
   if (!jsonForm || !jsonForm.formFields) {
     // Return null or handle the case where jsonForm or formFields is undefined
@@ -20,7 +20,7 @@ const FormUi = ({ jsonForm,onFieldUpdate,deleteField }) => {
   }
 
   return (
-    <div className="border p-5 md:w-[600px] rounded-lg">
+    <div className="border p-5 md:w-[600px] rounded-lg" data-theme={selectedTheme}>
       <h2 className="font-bold text-center text-2xl">{jsonForm.formTitle}</h2>
       <h2 className="text-sm text-gray-500 text-center">
         {jsonForm?.formSubheading}
@@ -34,7 +34,7 @@ const FormUi = ({ jsonForm,onFieldUpdate,deleteField }) => {
               </label>
 
               <Select>
-                <SelectTrigger className="w-full">
+                <SelectTrigger className="w-full bg-transparent">
                   <SelectValue placeholder={field.placeholder} />
                 </SelectTrigger>
                 <SelectContent className="text-black bg-gray-100">
@@ -90,6 +90,7 @@ const FormUi = ({ jsonForm,onFieldUpdate,deleteField }) => {
           <div><FieldEdit defaultValue = {field} onUpdate={(value)=>onFieldUpdate(value,index)} deleteField={()=>deleteField(index)}/></div>
         </div>
       ))}
+      <button className="btn btn-primary">Submit</button>
     </div>
   );
 };
