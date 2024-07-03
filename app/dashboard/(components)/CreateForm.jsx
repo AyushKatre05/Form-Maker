@@ -20,7 +20,7 @@ import { Loader2Icon } from "lucide-react";
 
 const CreateForm = () => {
 
-    const PROMPT = "Description:Student registration for coding workshop on React & react native. On the basis of description please give form in json format with form title, form subheading, Form field, form name , placeholder name , and form label, in Json format"
+    const PROMPT = "Description: Student registration for coding workshop on React & react native , On the basis of description please give form in json format with form title, form subheading, Form field, form name, placeholder name, and form label, fieldType, field required In Json format"
 
     const route = useRouter();
     const [openDialog,setOpenDialog] = useState(false);
