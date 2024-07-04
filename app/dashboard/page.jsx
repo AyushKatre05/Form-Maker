@@ -1,6 +1,6 @@
-import { Button } from '@/components/ui/button'
 import React from 'react'
 import CreateForm from './(components)/CreateForm'
+import FormList from './(components)/FormList'
 
 const page = () => {
   return (
@@ -8,6 +8,7 @@ const page = () => {
       <h2 className='font-bold text-3xl flex items-center justify-between'>Dashboard
       <CreateForm/>
       </h2>
+      <FormList/>
     </div>
   )
 }
