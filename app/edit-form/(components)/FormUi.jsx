@@ -16,6 +16,8 @@ import { db } from "@/configs";
 import { userResponse } from "@/configs/schema";
 import moment from "moment";
 import { toast } from "sonner";
+import { SignInButton, useUser } from "@clerk/nextjs";
+import { Button } from "@/components/ui/button";
 
 const FormUi = ({
   editable = true,
@@ -24,9 +26,11 @@ const FormUi = ({
   onFieldUpdate,
   deleteField,
   formId = 0,
+  enableSignIn=false
 }) => {
   const [formData, setFormData] = useState();
   let formRef = useRef();
+  const {user,isSignedIn} = useUser();
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -189,9 +193,11 @@ const FormUi = ({
           )}
         </div>
       ))}
-      <button type="submit" className="btn btn-primary">
+      {
+        isSignedIn?<button type="submit" className="btn btn-primary">
         Submit
-      </button>
+      </button>:<Button><SignInButton mode="modal">Sign In Before Submit</SignInButton></Button>
+      }
     </form>
   );
 };

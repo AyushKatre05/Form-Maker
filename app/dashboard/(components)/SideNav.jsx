@@ -5,7 +5,7 @@ import { db } from "@/configs";
 import { JsonForms } from "@/configs/schema";
 import { useUser } from "@clerk/nextjs";
 import { desc, eq } from "drizzle-orm";
-import { LibraryBig, LineChart, MessageSquare } from "lucide-react";
+import { LibraryBig, LineChart, MessageCircleQuestion, MessageSquare } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
@@ -26,9 +26,9 @@ const SideNav = () => {
     },
     {
       id: 3,
-      name: "Analytics",
-      icon: LineChart,
-      path: "/dashboard/analytics",
+      name: "How it works",
+      icon: MessageCircleQuestion,
+      path: "/how-it-works",
     },
   ];
 

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import {
   Select,
@@ -10,13 +10,14 @@ import {
 import Themes from "@/app/(data)/Themes";
 import GradientBg from "@/app/(data)/GradientBg";
 import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
 
-const Controller = ({selectedTheme,selectedBackground}) => {
-  const [showMore,setShowMore] = useState(6);
+const Controller = ({ setSignInEnable,selectedTheme, selectedBackground }) => {
+  const [showMore, setShowMore] = useState(6);
   return (
     <div>
       <h2 className="my-1">Select Theme</h2>
-      <Select onValueChange={(e)=>selectedTheme(e)}>
+      <Select onValueChange={(e) => selectedTheme(e)}>
         <SelectTrigger className="w-full">
           <SelectValue placeholder="Theme" />
         </SelectTrigger>
@@ -28,41 +29,54 @@ const Controller = ({selectedTheme,selectedBackground}) => {
                   <div
                     className="h-5 w-5"
                     style={{ backgroundColor: theme.primary }}
-                  >
-                  </div>
+                  ></div>
                   <div
                     className="h-5 w-5"
                     style={{ backgroundColor: theme.secondary }}
-                  >
-                  </div>
+                  ></div>
                   <div
                     className="h-5 w-5"
                     style={{ backgroundColor: theme.accent }}
-                  >
-                  </div>
+                  ></div>
                   <div
                     className="h-5 w-5"
                     style={{ backgroundColor: theme.neutral }}
-                  >
-                  </div>
+                  ></div>
                 </div>
-                    {theme.theme}
+                {theme.theme}
               </div>
             </SelectItem>
           ))}
         </SelectContent>
       </Select>
       <h2 className="mt-8 my-1">Background Color</h2>
-          <div className="grid grid-cols-3 gap-5">
-          {GradientBg.map((bg, index) => (index<showMore) && (
-            <div key={index} onClick={()=>selectedBackground(bg.gradient)} className="w-full h-[50-px] rounded-lg cursor-pointer hover:border-2 hover:border-black flex items-center justify-center"
-            style={{ background: bg.gradient }}>{index==0&&"None"}
-            </div>
-          ))}
-          </div>
-          <Button varient="ghost" size="sm" className="
-          w-full my-1" onClick={()=>setShowMore(showMore>6?6:11)}>{showMore>6?'Show Less':'Show More'}</Button>
-
+      <div className="grid grid-cols-3 gap-5">
+        {GradientBg.map(
+          (bg, index) =>
+            index < showMore && (
+              <div
+                key={index}
+                onClick={() => selectedBackground(bg.gradient)}
+                className="w-full h-[50-px] rounded-lg cursor-pointer hover:border-2 hover:border-black flex items-center justify-center"
+                style={{ background: bg.gradient }}
+              >
+                {index == 0 && "None"}
+              </div>
+            )
+        )}
+      </div>
+      <Button
+        varient="ghost"
+        size="sm"
+        className="
+          w-full my-1"
+        onClick={() => setShowMore(showMore > 6 ? 6 : 11)}
+      >
+        {showMore > 6 ? "Show Less" : "Show More"}
+      </Button>
+    <div className="flex gap-2 my-5 items-center mt-10">
+      <Checkbox onCheckedChange={(e)=>setSignInEnable(e)}/> <h2>Enable Social Authentication before submitting the form</h2>
+    </div>
     </div>
   );
 };
