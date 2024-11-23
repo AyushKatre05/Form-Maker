@@ -21,13 +21,14 @@ const LiveAiForm = ({ params }) => {
       .from(JsonForms)
       .where(eq(JsonForms.id, Number(params?.formid)));
     setRecord(result[0]);
+    console.log(result[0]);
     setJsonForm(JSON.parse(result[0].jsonform));
   };
 
   return (
     <div
       className="p-10 flex justify-center items-center"
-      style={{ backgroundImage: record?.backgroundImage }}
+      style={{ backgroundImage: record?.background }}
     >
       {record && (
         <FormUi
