@@ -2,7 +2,7 @@ import React from 'react';
 
 const HeroSection = () => {
   return (
-        <div className="mx-auto h-screen max-w-screen-xl px-4 py-32 lg:flex lg:items-center">
+        <div className="mx-auto bg-white dark:bg-black text-black dark:text-white h-screen max-w-screen-xl px-4 py-32 lg:flex lg:items-center">
           <div className="mx-auto max-w-xl text-center">
             <h1 className="text-3xl font-extrabold sm:text-5xl">
               Create Your Form Using the

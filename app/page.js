@@ -3,7 +3,7 @@ import HeroSection from './(components)/HeroSection'
 
 const page = () => {
   return (
-    <div><HeroSection/></div>
+    <div className='bg-white dark:bg-black text-black dark:text-white'><HeroSection/></div>
   )
 }
 
