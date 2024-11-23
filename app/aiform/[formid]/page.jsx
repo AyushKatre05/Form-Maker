@@ -46,7 +46,7 @@ const LiveAiForm = ({ params }) => {
         className="flex gap-2 items-center bg-black text-white px-3 py-1 rounded-full fixed bottom-5 left-5 cursor-pointer"
       >
         <Image src={"/logo.svg"} alt="logo" width={26} height={26} />
-        Build Your Own AI Form
+        Build with Colossus
       </Link>
     </div>
   );
