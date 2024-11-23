@@ -15,7 +15,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 const Controller = ({ setSignInEnable,selectedTheme, selectedBackground }) => {
   const [showMore, setShowMore] = useState(6);
   return (
-    <div>
+    <div className="text-black dark:text-white">
       <h2 className="my-1">Select Theme</h2>
       <Select onValueChange={(e) => selectedTheme(e)}>
         <SelectTrigger className="w-full">
