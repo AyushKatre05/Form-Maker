@@ -56,10 +56,6 @@ export default function Home() {
           </div>
         </section>
       </main>
-
-      <footer className="bg-gray-800 text-center py-4 text-gray-400">
-        © 2024 AI Form Builder. All rights reserved.
-      </footer>
     </div>
   );
 }
