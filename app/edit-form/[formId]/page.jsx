@@ -89,10 +89,10 @@ const EditForm = ({ params }) => {
   };
 
   return (
-    <div className="p-10">
-      <div className="flex justify-between items-center">
+    <div className="p-10 dark:bg-black bg-slate-100">
+      <div className="flex dark:text-white text-black justify-between items-center">
         <Link href={"/dashboard"}>
-          <Button className="flex gap-2 items-center my-5 cursor-pointer hover:font-bold bg-primary">
+          <Button className="flex gap-2 items-center my-5 cursor-pointer hover:font-bold bg-red-500">
             <ArrowLeft /> Back
           </Button>
         </Link>
@@ -119,7 +119,7 @@ const EditForm = ({ params }) => {
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-        <div className="p-5 border rounded-lg shadow-sm">
+        <div className="p-5 border border-black dark:border dark:border-white  rounded-lg shadow-sm">
           <Controller
             selectedBackground={(e) => {
                setSelectedBackground(e);
