@@ -21,8 +21,8 @@ const Responses = () => {
     }
 
   return (
-    <div className='p-10'>
-        <h2 className='font-bold text-3xl flex items-center justify-between'>Responses</h2>
+    <div className='p-10 dark:bg-black bg-slate-100'>
+        <h2 className='font-bold text-3xl dark:text-white text-black flex items-center justify-between'>Responses</h2>
         <div className='grid grid-cols-2 lg:grid-cols-3 gap-5'>
         {formList.map((form,index)=>(
             <ResponseItem formRecord={form} jsonForm={JSON.parse(form.jsonform)}/>
